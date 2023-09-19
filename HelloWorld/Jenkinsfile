@@ -1,41 +1,53 @@
 pipeline {
     agent any
-
     stages {
-        stage('Call HTTP Endpoint') {
+
+        stage('Call Endpoint') {
+
             steps {
+
                 script {
-			import jenkins.model.Jenkins
-			import hudson.model.*
-	                def jenkins = Jenkins.getInstance()
-			def globalConfig = jenkins.getDescriptorByType(GlobalConfiguration.class)
-			// Disable security (not recommended for production)
-			globalConfig.setUseSecurity(false)
+
+                    def endpointURL = 'https://localhost:9164/management/applications?carbonAppName=helloWorldCompositeExporter'  // Replace with your actual endpoint URL
+
+                    def response = sh(script: "curl -k -X GET $endpointURL", returnStatus: true)
 
 
-			// Save the global configuration
-			globalConfig.save()
-                        def response = httpRequest(
-                        acceptType: 'APPLICATION_JSON',  // Expected response type
-                        contentType: 'APPLICATION_JSON', // Request content type
-                        httpMode: 'GET',                // HTTP method (GET, POST, etc.)
-                        url: 'https://localhost:9164/management/applications?carbonAppName=helloWorldCompositeExporter', // URL of the endpoint
-                        validResponseCodes: '200',      // Expected HTTP response code(s)
-                        responseHandle: 'NONE'          // How to handle the response (NONE, JSON, XML, etc.)
-                    )
- // Get the HTTP response status code
-                    def statusCode = response.getStatus()
+                    if (response == 0) {
 
-                    // Get the HTTP response status text
-                   def responseBody = response.getContent()
+                        echo "Endpoint call successful"
 
-                    // Print the status code and status text to the console
-                    echo "Response Code: ${statusCode}"
-                    echo "Response Body: ${responseBody}"
+                    } else {
+
+                        error "Endpoint call failed with status code: $response"
+
+                    }
+
                 }
+
             }
+
         }
 
-        // Add more stages as needed
     }
+
+ 
+
+    post {
+
+        success {
+
+            // Define actions to take on successful build
+
+        }
+
+        failure {
+
+            // Define actions to take on build failure
+
+        }
+
+    }
+
 }
+
