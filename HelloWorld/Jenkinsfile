@@ -5,9 +5,6 @@ pipeline {
         stage('Call HTTP Endpoint') {
             steps {
                 script {
-		// Disable SSL certificate validation by setting Java system properties
-                    System.setProperty("javax.net.ssl.trustStore", "/dev/null")
-                    System.setProperty("javax.net.ssl.trustStorePassword", "")
 	
                     def response = httpRequest(
                         acceptType: 'APPLICATION_JSON',  // Expected response type
