@@ -5,11 +5,21 @@ pipeline {
         stage('Call HTTP Endpoint') {
             steps {
                 script {
-                    def response = httpRequest(
+			import jenkins.model.Jenkins
+			import hudson.model.*
+	                def jenkins = Jenkins.getInstance()
+			def globalConfig = jenkins.getDescriptorByType(GlobalConfiguration.class)
+			// Disable security (not recommended for production)
+			globalConfig.setUseSecurity(false)
+
+
+			// Save the global configuration
+			globalConfig.save()
+                        def response = httpRequest(
                         acceptType: 'APPLICATION_JSON',  // Expected response type
                         contentType: 'APPLICATION_JSON', // Request content type
                         httpMode: 'GET',                // HTTP method (GET, POST, etc.)
-                        url: 'http://localhost:8290/HelloWorld', // URL of the endpoint
+                        url: 'https://localhost:9164/management/applications?carbonAppName=helloWorldCompositeExporter', // URL of the endpoint
                         validResponseCodes: '200',      // Expected HTTP response code(s)
                         responseHandle: 'NONE'          // How to handle the response (NONE, JSON, XML, etc.)
                     )
