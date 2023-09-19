@@ -11,7 +11,7 @@ pipeline {
                         httpMode: 'GET',                // HTTP method (GET, POST, etc.)
                         url: 'http://localhost:8290/HelloWorld', // URL of the endpoint
                         validResponseCodes: '200',      // Expected HTTP response code(s)
-                        responseHandle: 'NONE'          // How to handle the response (NONE, JSON, XML, etc.)
+                        responseHandle: 'NONE',          // How to handle the response (NONE, JSON, XML, etc.)
 			trustSelfSignedCerts: true      // Disable SSL certificate validation
                     )
  // Get the HTTP response status code
