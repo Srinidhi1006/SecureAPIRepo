@@ -1,0 +1,31 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('Call HTTP Endpoint') {
+            steps {
+                script {
+                    def response = httpRequest(
+                        acceptType: 'APPLICATION_JSON',  // Expected response type
+                        contentType: 'APPLICATION_JSON', // Request content type
+                        httpMode: 'GET',                // HTTP method (GET, POST, etc.)
+                        url: 'http://localhost:8290/HelloWorld', // URL of the endpoint
+                        validResponseCodes: '200',      // Expected HTTP response code(s)
+                        responseHandle: 'NONE'          // How to handle the response (NONE, JSON, XML, etc.)
+                    )
+ // Get the HTTP response status code
+                    def statusCode = response.getStatus()
+
+                    // Get the HTTP response status text
+                   def responseBody = response.getContent()
+
+                    // Print the status code and status text to the console
+                    echo "Response Code: ${statusCode}"
+                    echo "Response Body: ${responseBody}"
+                }
+            }
+        }
+
+        // Add more stages as needed
+    }
+}
