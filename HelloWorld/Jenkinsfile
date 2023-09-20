@@ -21,8 +21,11 @@ pipeline {
                         url: endpointURL, 
                         validResponseCodes: '200',      
                         responseHandle: 'NONE',          
-			 headers: headers
-			//trustSelfSignedCerts: true      
+			headers: [
+                            Authorization: bearerToken,
+                            Accept: 'application/json',
+                            Content-Type: 'application/json'
+                        ]     
                     )
  // Get the HTTP response status code
                     def statusCode = response.getStatus()
