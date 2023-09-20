@@ -6,7 +6,11 @@ pipeline {
             steps {
                 script {
 			
-	
+		 def headers = [
+                        // Add the Authorization header with your token
+                        'Authorization': 'Bearer eyJraWQiOiJkOWMxNzUyOS1mNTEyLTRhOGUtYWVlMy01ZjI5YTQyODc3ODMiLCJhbGciOiJSUzI1NiJ9.eyJpc3MiOiJodHRwczpcL1wvMDowOjA6MDowOjA6MDoxOjkxNjRcLyIsInN1YiI6ImFkbWluIiwiZXhwIjoxNjk1MTM0NjIwLCJzY29wZSI6ImFkbWluIn0.XhlZxx9UaFSSqh65QqAvvgEojAZ8ESK8bYN95dWmXTLulGtEMU_FKroaqpZduQOQHsX-zXPGBmdicfdAJQbYkuYopi2IfDGjw52fB5LbrDaTXpwYXD2ca42CaKMS5xPudl8Jh5KK1Fcm64Y2enUCljzOotBL0NWMJ8NXYFbINaBsytnkqdjYzb81fwHZynUB_As5k8VIuYXruPZCJsx3KZ7XXo8uKcgrzUP3FVZG0sCpXjPprTZi-yCodhO8gMqNqEn6jc4w2YOFiiY1h0xWSog8V7W57sTecBsvE-rQhDgb5FzVTmScW61D6LXeLZrV1HFZ88GSv07X8wMnJgqrQw',
+                        'Custom-Header': 'headerValue'
+                    ]
                     def response = httpRequest(
                         acceptType: 'APPLICATION_JSON',  // Expected response type
                         contentType: 'APPLICATION_JSON', // Request content type
