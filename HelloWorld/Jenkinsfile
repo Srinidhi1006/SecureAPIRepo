@@ -19,7 +19,7 @@ pipeline {
                         httpMode: 'GET',                
                         url: endpointURL, 
                         validResponseCodes: '200',      
-                        responseHandle: 'NONE'          
+                        responseHandle: 'NONE',          
 			 headers: headers
 			//trustSelfSignedCerts: true      
                     )
