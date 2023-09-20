@@ -8,7 +8,7 @@ pipeline {
 			
 		 def headers = [
                         // Add the Authorization header with your token
-                        'Authorization': 'Bearer eyJraWQiOiJkOWMxNzUyOS1mNTEyLTRhOGUtYWVlMy01ZjI5YTQyODc3ODMiLCJhbGciOiJSUzI1NiJ9.eyJpc3MiOiJodHRwczpcL1wvMDowOjA6MDowOjA6MDoxOjkxNjRcLyIsInN1YiI6ImFkbWluIiwiZXhwIjoxNjk1MTM0NjIwLCJzY29wZSI6ImFkbWluIn0.XhlZxx9UaFSSqh65QqAvvgEojAZ8ESK8bYN95dWmXTLulGtEMU_FKroaqpZduQOQHsX-zXPGBmdicfdAJQbYkuYopi2IfDGjw52fB5LbrDaTXpwYXD2ca42CaKMS5xPudl8Jh5KK1Fcm64Y2enUCljzOotBL0NWMJ8NXYFbINaBsytnkqdjYzb81fwHZynUB_As5k8VIuYXruPZCJsx3KZ7XXo8uKcgrzUP3FVZG0sCpXjPprTZi-yCodhO8gMqNqEn6jc4w2YOFiiY1h0xWSog8V7W57sTecBsvE-rQhDgb5FzVTmScW61D6LXeLZrV1HFZ88GSv07X8wMnJgqrQw'
+                        'Authorization': 'Bearer eyJraWQiOiJjNjkzMWJhYy1lYjZkLTRkZDItYTNiYS1kNTE5ZGI5MjIzNjAiLCJhbGciOiJSUzI1NiJ9.eyJpc3MiOiJodHRwczpcL1wvMDowOjA6MDowOjA6MDoxOjkxNjRcLyIsInN1YiI6ImFkbWluIiwiZXhwIjoxNjk1MTk1ODcwLCJzY29wZSI6ImFkbWluIn0.Zs2C2vPFkJ54ANZCFOdMjaspwMdLonYNKNoU1DJ7H6ENqH_VyJQ1L4lpaFvnSiwMNPN88ip5gHJP17qbSxdaVF33BPfJdhfVPfMyEhLvoIEdeWo-DMt61wQGSNstz8GPSTCSWoKCipmqwJ8A7SPdCxlPC7QDGWiYUzBBArMBV7DIeF3d_fklf0qfqe86h8VCwt-X12FFUOGeLonSYFEPZmpjm6AlGnOjoFvdtB44of-_7VyCGnuaaLBMfm4WmrM_W9EQ1jPxloab8SW7KJGYst1B87pYCXw4nm6VvF53pvcivWYp5eDxB1R7O1u3inv7YhudNpeuOJGBii-yEf-UtA'
                     ]
                     def response = httpRequest(
                         acceptType: 'APPLICATION_JSON',  // Expected response type
