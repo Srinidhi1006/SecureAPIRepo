@@ -15,11 +15,11 @@ pipeline {
                         url: endpointURL, 
                         validResponseCodes: '200',      
                         responseHandle: 'NONE',          
-			 headers: [
+			            headers: [
                         'Authorization': bearerToken,
                         'Accept': 'application/json',
                         'Content-Type': 'application/json'
-		 echo "Request Headers: ${headers}"	
+		 
                     ]
 			//trustSelfSignedCerts: true      
                     )
