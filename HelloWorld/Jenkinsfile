@@ -6,7 +6,7 @@ pipeline {
             steps {
                 script {
 		def endpointURL = 'https://localhost:9164/management/applications?carbonAppName=helloWorldCompositeExporter'
-                    def bearerToken = 'BearereyJraWQiOiJjNjkzMWJhYy1lYjZkLTRkZDItYTNiYS1kNTE5ZGI5MjIzNjAiLCJhbGciOiJSUzI1NiJ9.eyJpc3MiOiJodHRwczpcL1wvMDowOjA6MDowOjA6MDoxOjkxNjRcLyIsInN1YiI6ImFkbWluIiwiZXhwIjoxNjk1MTk1ODcwLCJzY29wZSI6ImFkbWluIn0.Zs2C2vPFkJ54ANZCFOdMjaspwMdLonYNKNoU1DJ7H6ENqH_VyJQ1L4lpaFvnSiwMNPN88ip5gHJP17qbSxdaVF33BPfJdhfVPfMyEhLvoIEdeWo-DMt61wQGSNstz8GPSTCSWoKCipmqwJ8A7SPdCxlPC7QDGWiYUzBBArMBV7DIeF3d_fklf0qfqe86h8VCwt-X12FFUOGeLonSYFEPZmpjm6AlGnOjoFvdtB44of-_7VyCGnuaaLBMfm4WmrM_W9EQ1jPxloab8SW7KJGYst1B87pYCXw4nm6VvF53pvcivWYp5eDxB1R7O1u3inv7YhudNpeuOJGBii-yEf-UtA'	
+                    def bearerToken = 'Bearer eyJraWQiOiJjNjkzMWJhYy1lYjZkLTRkZDItYTNiYS1kNTE5ZGI5MjIzNjAiLCJhbGciOiJSUzI1NiJ9.eyJpc3MiOiJodHRwczpcL1wvMDowOjA6MDowOjA6MDoxOjkxNjRcLyIsInN1YiI6ImFkbWluIiwiZXhwIjoxNjk1MTk1ODcwLCJzY29wZSI6ImFkbWluIn0.Zs2C2vPFkJ54ANZCFOdMjaspwMdLonYNKNoU1DJ7H6ENqH_VyJQ1L4lpaFvnSiwMNPN88ip5gHJP17qbSxdaVF33BPfJdhfVPfMyEhLvoIEdeWo-DMt61wQGSNstz8GPSTCSWoKCipmqwJ8A7SPdCxlPC7QDGWiYUzBBArMBV7DIeF3d_fklf0qfqe86h8VCwt-X12FFUOGeLonSYFEPZmpjm6AlGnOjoFvdtB44of-_7VyCGnuaaLBMfm4WmrM_W9EQ1jPxloab8SW7KJGYst1B87pYCXw4nm6VvF53pvcivWYp5eDxB1R7O1u3inv7YhudNpeuOJGBii-yEf-UtA'	
 			
 		 def headers = [
                         'Authorization': bearerToken,
